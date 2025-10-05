@@ -2,10 +2,14 @@
 layout: site
 ---
 <article class="card">
-<p class="muted">📅 {{ page.date | date: "%d.%m.%Y" }}</p>
-<h1>{{ page.title }}</h1>
-{% if page.cover %}
-<img src="{{ page.cover | relative_url }}" alt="" style="width:100%;max-height:280px;object-fit:cover;border-radius:12px;border:1px solid var(--border);margin:10px 0 16px;">
-{% endif %}
-{{ content }}
+  {% if page.date %}
+    <p class="muted">📅 {{ page.date | date: "%d.%m.%Y" }}</p>
+  {% endif %}
+  <h1>{{ page.title }}</h1>
+
+  {% if page.cover %}
+    <img src="{{ page.cover | absolute_url }}" alt="" style="width:100%;max-height:280px;object-fit:cover;border-radius:12px;border:1px solid var(--border);margin:10px 0 16px;">
+  {% endif %}
+
+  {{ content }}
 </article>
