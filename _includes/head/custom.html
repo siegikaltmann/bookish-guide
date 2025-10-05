@@ -1,0 +1,31 @@
+<!-- MM-Kleintuning: Farben & Buttons im Minimal-Mistakes-Look angleichen -->
+<style>
+  /* Wähle hier deine Akzentfarbe fürs MM-Theme: */
+  :root{ --mm-brand:#0a66ff; }          /* Sky-Blau */
+  @media (prefers-color-scheme: dark){
+    :root{ --mm-brand:#4f8cff; }        /* leicht heller im Dark Mode */
+  }
+
+  /* Links und Fokusfarben */
+  .page__content a,
+  .page__content a:visited { color: var(--mm-brand); }
+  .page__content a:hover { text-decoration: underline; }
+
+  /* Primäre Buttons (MM-Klassen) */
+  .btn--primary {
+    background: var(--mm-brand);
+    border-color: var(--mm-brand);
+  }
+  .btn--primary:hover,
+  .btn--primary:focus {
+    filter: brightness(1.05);
+  }
+
+  /* Aktive Nav in der Masthead (falls du später die MM-Navigation nutzt) */
+  .masthead__menu-item a:focus,
+  .masthead__menu-item a:hover { color: var(--mm-brand) !important; }
+  .masthead__menu-item--active a { color: var(--mm-brand) !important; }
+
+  /* Kleinere Abstände bei Splash-Headertext (subtiler) */
+  .page__hero--overlay .page__lead { margin-top: .25rem; }
+</style>
