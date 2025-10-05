@@ -1,5 +1,3 @@
-## 2) `_maschinenbau/kapitel-04-statik-kraefte-momente.md`
-
 ```markdown
 ---
 title: Kapitel 4 – Statik: Kräfte & Momente
