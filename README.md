@@ -162,7 +162,7 @@ ___
 - Cover/PDF-Pfade beginnen mit /assets/… und existieren.
 ---
 
-## 5. 🧷 Bonus-Schnellzugriffe
+## 6. 🧷 Bonus-Schnellzugriffe
 - Neuen Post anlegen (Web-UI): Add file → Create new file
 → Datei-Pfad direkt tippen: _lab/2025-10-19-woche-03.md
 - Duplizieren: bestehende Datei öffnen → Edit → „Copy raw“, neue Datei erstellen und einfügen.
