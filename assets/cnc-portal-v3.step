@@ -1,0 +1,9 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('Dummy STEP for CNC Portal'),'1');
+FILE_NAME('cnc-portal-v3.step','2025-10-05T21:02:16Z',('siegikaltmann'),('HTL'),'','ChatGPT','');
+FILE_SCHEMA(('CONFIG_CONTROL_DESIGN'));
+ENDSEC;
+DATA;
+ENDSEC;
+END-ISO-10303-21;
