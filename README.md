@@ -109,6 +109,7 @@ weight: 3
 - Reihenfolge nur über `weight` steuern.
 - Math: Kramdown/KaTeX-Style geht mit Inline-$…$ und Block-Formeln (einfach halten).
 
+---
 ## 3. 🎓 _diplomarbeit — „Monatsupdates & Finale“
 - Ordner: `_diplomarbeit/`
 - Listen-Seite: `diplomarbeit/index.md` (gruppiert nach project)
@@ -153,15 +154,18 @@ Kurzbeschreibung …
 
 ___
 
-5. ## 🔧 Mini-Check bei neuen Einträgen
+## 5. 🔧 Mini-Check bei neuen Einträgen
 - Datei im richtigen Ordner? (_lab, _maschinenbau, _diplomarbeit)
 - Front-Matter oben mit --- geöffnet/geschlossen?
 - Bei `_lab/_diplomarbeit: date:` gesetzt (wird sortiert).
 - Bei `_maschinenbau: weight:` gesetzt (Reihenfolge).
 - Cover/PDF-Pfade beginnen mit /assets/… und existieren.
+---
 
-
-
+## 5. 🧷 Bonus-Schnellzugriffe
+- Neuen Post anlegen (Web-UI): Add file → Create new file
+→ Datei-Pfad direkt tippen: _lab/2025-10-19-woche-03.md
+- Duplizieren: bestehende Datei öffnen → Edit → „Copy raw“, neue Datei erstellen und einfügen.
 
 
 
