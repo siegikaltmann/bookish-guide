@@ -1,0 +1,31 @@
+---
+layout: splash
+title: HTL – Labor · Maschinenbau · Diplom
+permalink: /mm-home/
+classes: wide
+excerpt: "Raspberry Pi Pico Labor • Maschinenbau-Skriptum • Diplomarbeiten"
+header:
+  overlay_image: /assets/cover-lab.jpg
+  overlay_filter: "0.25"
+  actions:
+    - label: "Zum Labor"
+      url: "{{ '/lab/' | absolute_url }}"
+feature_row:
+  - image_path: /assets/cover-lab.jpg
+    title: "Raspberry Pi Pico – Labor"
+    excerpt: "Wöchentliche Fortschritte, Code & Demos"
+    url: "{{ '/lab/' | absolute_url }}"
+    btn_label: "Öffnen"
+  - image_path: /assets/cover-mb.jpg
+    title: "Maschinenbau – Skriptum"
+    excerpt: "Kapitel & Übungsbeispiele"
+    url: "{{ '/maschinenbau/' | absolute_url }}"
+    btn_label: "Öffnen"
+  - image_path: /assets/cover-diplomarbeit.jpg
+    title: "Diplomarbeiten"
+    excerpt: "Monatsupdates & finale Arbeiten"
+    url: "{{ '/diplomarbeit/' | absolute_url }}"
+    btn_label: "Öffnen"
+---
+
+{% include feature_row %}
