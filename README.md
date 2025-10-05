@@ -12,7 +12,7 @@ assets/cover-diplomarbeit.jpg
 In Beiträgen/Seiten kannst du so verlinken:
 
 ```markdown
-markdown
+md
 
 [Labor-Kurzleitfaden (PDF)]({{ '/assets/labor-kurzleitfaden.pdf' | relative_url }})
 ```
