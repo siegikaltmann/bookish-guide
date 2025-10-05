@@ -5,6 +5,8 @@ baseurl: "/bookish-guide"                 # <- exakt dein Repo-Name, mit führen
 timezone: Europe/Vienna
 markdown: kramdown
 plugins: []
+remote_theme: "mmistakes/minimal-mistakes"
+
 
 collections:
   lab:
