@@ -36,8 +36,9 @@ Damit bleiben alle Listen automatisch aktuell – die Startseite verlinkt sauber
 - Bilder/PDFs: in `assets/` ablegen und so verlinken:
 `{{ '/assets/datei.png' | absolute_url }}` oder `relative_url` – du nutzt `absolute_url`.
 - Cover-Bild (optional): Front-Matter `cover: /assets/dein-bild.jpg` (ideal 1200×630).
+---
 
-1. ## 🧪 _lab — „Wöchentlicher Fortschritt“
+## 1. 🧪 _lab — „Wöchentlicher Fortschritt“
 - Ordner: `_lab/`
 - Listen-Seite: `lab/index.md` (nutzt `layout: list`)
 - So legst du eine Woche an
@@ -79,7 +80,7 @@ for a in range(0,181,15):
 ```
 ---
 
-2. ## ⚙️ _maschinenbau — „Kapitel & Übungen“
+## 2. ⚙️ _maschinenbau — „Kapitel & Übungen“
 **Ordner:** `_maschinenbau/`  
 **Listen-Seite:** `maschinenbau/index.md` (sortiert nach `weight`)
 
@@ -108,7 +109,7 @@ weight: 3
 - Reihenfolge nur über `weight` steuern.
 - Math: Kramdown/KaTeX-Style geht mit Inline-$…$ und Block-Formeln (einfach halten).
 
-3. ## 🎓 _diplomarbeit — „Monatsupdates & Finale“
+## 3. 🎓 _diplomarbeit — „Monatsupdates & Finale“
 - Ordner: `_diplomarbeit/`
 - Listen-Seite: `diplomarbeit/index.md` (gruppiert nach project)
 - Monats-Update (pro Projekt)
@@ -127,7 +128,7 @@ cover: /assets/cover-diplomarbeit.jpg
 **Nächste Schritte:** FEM an Unterarm, Prototyp Fräsen.
 ```
 
-3. ## Finale Arbeit
+## 4. Finale Arbeit
 - Dateiname: `_diplomarbeit/robotarm-finale.md`
 
 ```
