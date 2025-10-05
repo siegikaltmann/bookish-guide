@@ -54,3 +54,21 @@ footer {
 @media (max-width: 640px){
   .links a { margin-left: 8px; }
 }
+/* Farbalternativen – einfach die Werte oben im :root tauschen */
+.theme-sky  { --brand:#0a66ff; }
+.theme-emerald { --brand:#10b981; }
+.theme-violet { --brand:#7c3aed; }
+
+/* Auto-Dark-Mode */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b0c10;
+    --card:#111318;
+    --text:#e8eaf0;
+    --muted:#a1a6b3;
+    --brand:#4f8cff;
+    --border:#1f2330;
+  }
+  .links a:hover { background: #161922; }
+  .card { box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+}
