@@ -1,4 +1,4 @@
-# bookish-guide
+# 1.bookish-guide
 
 ## Dateien - wie einbinden als Assets (Vorschaubilder)
 Lade die Dateien in deinem Repo in den Ordner assets/ hoch.
