@@ -2,7 +2,9 @@
 layout: default
 ---
 <h1>{{ page.title }}</h1>
-{% assign items = site[page.collection] | sort: 'date' | reverse %}
+{% assign coll = site.collections | where: "label", page.collection | first %}
+{% if coll and coll.docs %}
+{% assign items = coll.docs | sort: "date" | reverse %}
 {% for item in items %}
 <article class="card" style="margin-bottom:16px;">
 <h2 style="margin:0 0 6px;"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
@@ -17,3 +19,6 @@ layout: default
 {% endif %}
 </article>
 {% endfor %}
+{% else %}
+<p class="muted">Keine Einträge gefunden. Lege Dateien in <code>_{{ page.collection }}</code> an.</p>
+{% endif %}
