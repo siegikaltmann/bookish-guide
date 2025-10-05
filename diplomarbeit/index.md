@@ -7,7 +7,7 @@ title: Diplomarbeiten
 <h1>Diplomarbeiten</h1>
 <p class="muted">Updates sind nach Projekt gruppiert (aktuellste oben).</p>
 
-{% assign groups = site.diplom | group_by: 'project' %}
+{% assign groups = site.diplomarbeit | group_by: 'project' %}
 {% assign sorted = groups | sort: 'name' %}
 {% for g in sorted %}
 <section class="card" style="margin-bottom:16px;">
