@@ -37,7 +37,7 @@ Damit bleiben alle Listen automatisch aktuell – die Startseite verlinkt sauber
 `{{ '/assets/datei.png' | absolute_url }}` oder `relative_url` – du nutzt `absolute_url`.
 - Cover-Bild (optional): Front-Matter `cover: /assets/dein-bild.jpg` (ideal 1200×630).
 
-## 🧪 _lab — „Wöchentlicher Fortschritt“
+1. ## 🧪 _lab — „Wöchentlicher Fortschritt“
 - Ordner: `_lab/`
 - Listen-Seite: `lab/index.md` (nutzt `layout: list`)
 - So legst du eine Woche an
@@ -102,4 +102,11 @@ weight: 3
 1) Ein Wagen legt 24 m in 3 s zurück. v = ?  
 2) v steigt von 2→8 m/s in 4 s. a = ?
 ```
+
+## Tipps
+- Reihenfolge nur über `weight` steuern.
+- Math: Kramdown/KaTeX-Style geht mit Inline-$…$ und Block-Formeln (einfach halten).
+
+
+
 
