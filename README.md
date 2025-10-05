@@ -76,10 +76,10 @@ for a in range(0,181,15):
 - Jede Woche = **eine Datei** mit `date:`.  
 - Bilder: `![Aufbau]({{ '/assets/w02-aufbau.jpg' | absolute_url }})`  
 - PDF-Beilage: `[Handout]({{ '/assets/labor-kurzleitfaden.pdf' | absolute_url }})`
-
+```
 ---
 
-# ⚙️ _maschinenbau — „Kapitel & Übungen“
+2. ## ⚙️ _maschinenbau — „Kapitel & Übungen“
 **Ordner:** `_maschinenbau/`  
 **Listen-Seite:** `maschinenbau/index.md` (sortiert nach `weight`)
 
