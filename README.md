@@ -68,8 +68,8 @@ for a in range(0,181,15):
 ```
 
 ## Aufgaben
-Sweep 20°↔160° mit 2°-Schritten.
-Button = Positionssprung (0°/90°/180°).
+1. Sweep 20°↔160° mit 2°-Schritten.
+2. Button = Positionssprung (0°/90°/180°).
 
 ```Yaml
 **Tipps**
