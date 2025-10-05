@@ -13,8 +13,10 @@ In Beiträgen/Seiten kannst du so verlinken:
 
 ```markdown
 [Labor-Kurzleitfaden (PDF)]({{ '/assets/labor-kurzleitfaden.pdf' | relative_url }})
+Markdown
 ```
 
 ```yaml
 cover: /assets/cover-lab.jpg
+yaml
 ```
