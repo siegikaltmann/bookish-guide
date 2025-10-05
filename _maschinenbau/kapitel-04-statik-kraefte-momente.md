@@ -1,5 +1,3 @@
-
-
 ---
 title: Kapitel 4 – Statik: Kräfte & Momente
 weight: 4 # Nummerierung
