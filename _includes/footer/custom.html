@@ -1,0 +1,48 @@
+<!-- MM-only footer additions -->
+<div class="mm-footer noprint" style="margin-top:.5rem; font-size:.95em;">
+  <span>© <span id="y-mm"></span> {{ site.title }}</span>
+  <span aria-hidden="true"> · </span>
+  <a href="{{ '/' | absolute_url }}">Start</a>
+  <span aria-hidden="true"> · </span>
+  <a href="{{ '/lab/' | absolute_url }}">Labor</a>
+  <span aria-hidden="true"> · </span>
+  <a href="{{ '/maschinenbau/' | absolute_url }}">Maschinenbau</a>
+  <span aria-hidden="true"> · </span>
+  <a href="{{ '/diplomarbeit/' | absolute_url }}">Diplomarbeiten</a>
+</div>
+
+<!-- Back-to-top Button (MM pages only) -->
+<button id="mmTop" class="noprint" aria-label="Nach oben" title="Nach oben"
+  style="
+    position:fixed; right:16px; bottom:16px; z-index:9999;
+    display:none; padding:10px 12px; border-radius:999px; border:1px solid #0000;
+    background: var(--mm-brand, #0a66ff); color:#fff; font-weight:600; cursor:pointer;
+    box-shadow:0 6px 18px rgba(0,0,0,.18);
+  ">
+  ↑
+</button>
+
+<script>
+  // Jahr
+  (function(){ var el=document.getElementById('y-mm'); if(el) el.textContent=new Date().getFullYear(); })();
+
+  // Back-to-top Sichtbarkeit & Scroll
+  (function(){
+    var btn = document.getElementById('mmTop'); if(!btn) return;
+    function onScroll(){
+      btn.style.display = (window.scrollY > 320) ? 'block' : 'none';
+    }
+    window.addEventListener('scroll', onScroll, { passive:true });
+    btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    onScroll();
+  })();
+</script>
+
+<style>
+  /* leichte Einbettung in den MM-Footer */
+  .page__footer .mm-footer a { text-decoration: none; }
+  .page__footer .mm-footer a:hover { text-decoration: underline; }
+  @media (prefers-reduced-motion: reduce){
+    #mmTop { scroll-behavior: auto; }
+  }
+</style>
