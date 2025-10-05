@@ -1,9 +1,8 @@
-```Markdown
 ---
 title: Kapitel 4 – Statik: Kräfte & Momente
 weight: 4
 ---
-```
+
 ## Lernziele
 - Freikörperbild (Free Body Diagram, FBD) erstellen.
 - Gleichgewichtsbedingungen anwenden: $\sum F = 0$, $\sum M = 0$.
