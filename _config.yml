@@ -6,6 +6,8 @@ timezone: Europe/Vienna
 markdown: kramdown
 plugins: []
 remote_theme: "mmistakes/minimal-mistakes"
+plugins:
+  - jekyll-include-cache
 
 
 collections:
