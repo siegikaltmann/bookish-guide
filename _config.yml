@@ -1,0 +1,26 @@
+title: Meine Website
+description: Dokumentation für Labor, Maschinenbau & Diplomarbeiten
+url: https://DEINNAME.github.io # <— DEIN GitHub-Nutzername
+baseurl: "/meine-website" # <— Dein Repo-Name, inkl. führendem Slash
+timezone: Europe/Vienna
+markdown: kramdown
+plugins: [] # GitHub Pages-sicher
+
+collections:
+lab:
+output: true
+permalink: /lab/:slug/
+maschinenbau:
+output: true
+permalink: /maschinenbau/:slug/
+diplom:
+output: true
+permalink: /diplom/:slug/
+
+defaults:
+- scope: { path: "", type: lab }
+values: { layout: post, theme: theme-emerald }
+- scope: { path: "", type: maschinenbau }
+values: { layout: doc, theme: theme-violet }
+- scope: { path: "", type: diplom }
+values: { layout: post, theme: theme-amber }
