@@ -168,6 +168,13 @@ ___
 - Duplizieren: bestehende Datei öffnen → Edit → „Copy raw“, neue Datei erstellen und einfügen.
 
 
+# 2. TOC
+Verwendung (in Kapiteln):
+
+Ganz oben in jedem Maschinenbau-Kapitel (oder langen Labor-Post) einfügen:
+```
+{% include toc.html %}
+```
 
 
 
