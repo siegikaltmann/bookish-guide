@@ -1,26 +1,38 @@
 title: Meine Website
 description: Dokumentation für Labor, Maschinenbau & Diplomarbeiten
-url: https://siegikaltmann.github.io # <— DEIN GitHub-Nutzername
-baseurl: "/bookish-guide" # <— Dein Repo-Name, inkl. führendem Slash
+url: "https://DEINNAME.github.io"      # <- deinen GitHub-Namen einsetzen
+baseurl: "/DEIN-REPO"                  # <- exakt dein Repo-Name, mit führendem Slash
 timezone: Europe/Vienna
 markdown: kramdown
-plugins: [] # GitHub Pages-sicher
+plugins: []
 
 collections:
-lab:
-output: true
-permalink: /lab/:slug/
-maschinenbau:
-output: true
-permalink: /maschinenbau/:slug/
-diplomarbeit:
-output: true
-permalink: /diplomarbeit/:slug/
+  lab:
+    output: true
+    permalink: "/lab/:slug/"
+  maschinenbau:
+    output: true
+    permalink: "/maschinenbau/:slug/"
+  diplomarbeit:
+    output: true
+    permalink: "/diplomarbeit/:slug/"
 
 defaults:
-- scope: { path: "", type: lab }
-values: { layout: post, theme: theme-emerald }
-- scope: { path: "", type: maschinenbau }
-values: { layout: doc, theme: theme-violet }
-- scope: { path: "", type: diplomarbeit }
-values: { layout: post, theme: theme-amber }
+  - scope:
+      path: ""
+      type: lab
+    values:
+      layout: post
+      theme: theme-emerald
+  - scope:
+      path: ""
+      type: maschinenbau
+    values:
+      layout: doc
+      theme: theme-violet
+  - scope:
+      path: ""
+      type: diplomarbeit
+    values:
+      layout: post
+      theme: theme-amber
