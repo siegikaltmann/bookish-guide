@@ -106,3 +106,9 @@ body.theme-amber{
   .links a:hover { background:#161922; }
   .card { box-shadow:0 8px 24px rgba(0,0,0,.25); }
 }
+/* Grid für Kacheln auf der Startseite */
+.tiles{ display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+.tile img{ width:100%; height:140px; object-fit:cover; border-radius:12px; border:1px solid var(--border); }
+.tile .t-title{ font-weight:700; margin-top:10px; }
+.tile .t-desc{ color:var(--muted); font-size:14px; }
+.tile.card{ padding:14px; }
