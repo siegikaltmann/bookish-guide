@@ -67,6 +67,39 @@ for a in range(0,181,15):
     angle(a); time.sleep(0.2)
 ```
 
+## Aufgaben
+Sweep 20°↔160° mit 2°-Schritten.
+Button = Positionssprung (0°/90°/180°).
 
+```Yaml
+**Tipps**
+- Jede Woche = **eine Datei** mit `date:`.  
+- Bilder: `![Aufbau]({{ '/assets/w02-aufbau.jpg' | absolute_url }})`  
+- PDF-Beilage: `[Handout]({{ '/assets/labor-kurzleitfaden.pdf' | absolute_url }})`
 
+---
+
+# ⚙️ _maschinenbau — „Kapitel & Übungen“
+**Ordner:** `_maschinenbau/`  
+**Listen-Seite:** `maschinenbau/index.md` (sortiert nach `weight`)
+
+## Neues Kapitel
+**Dateiname:** `_maschinenbau/kapitel-03-kinematik.md`
+```markdown
+---
+title: Kapitel 3 – Kinematik
+weight: 3
+---
+
+### Lernziele
+- Weg, Geschwindigkeit, Beschleunigung.
+
+### Formeln
+- v = s / t  
+- a = Δv / Δt
+
+### Übung
+1) Ein Wagen legt 24 m in 3 s zurück. v = ?  
+2) v steigt von 2→8 m/s in 4 s. a = ?
+```
 
