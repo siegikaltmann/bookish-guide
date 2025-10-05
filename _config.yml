@@ -4,13 +4,12 @@ url: "https://siegikaltmann.github.io"      # <- deinen GitHub-Namen einsetzen
 baseurl: "/bookish-guide"                 # <- exakt dein Repo-Name, mit führendem Slash
 timezone: Europe/Vienna
 markdown: kramdown
-plugins: []
-remote_theme: "mmistakes/minimal-mistakes"
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
-
-
+  
 collections:
   lab:
     output: true
