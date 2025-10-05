@@ -85,6 +85,7 @@ for a in range(0,181,15):
 
 ## Neues Kapitel
 **Dateiname:** `_maschinenbau/kapitel-03-kinematik.md`
+
 ```markdown
 ---
 title: Kapitel 3 – Kinematik
@@ -106,6 +107,61 @@ weight: 3
 ## Tipps
 - Reihenfolge nur über `weight` steuern.
 - Math: Kramdown/KaTeX-Style geht mit Inline-$…$ und Block-Formeln (einfach halten).
+
+3. ## 🎓 _diplomarbeit — „Monatsupdates & Finale“
+- Ordner: `_diplomarbeit/`
+- Listen-Seite: `diplomarbeit/index.md` (gruppiert nach project)
+- Monats-Update (pro Projekt)
+- Dateiname: `_diplomarbeit/robotarm-2025-11.md`
+
+```
+---
+title: Robotarm – Monatsupdate Nov 2025
+date: 2025-11-01
+project: Robotarm
+cover: /assets/cover-diplomarbeit.jpg
+---
+
+**Fortschritt:** Getriebeübersetzung definiert, CAD V2.  
+**Blocker:** Lieferzeit Servos.  
+**Nächste Schritte:** FEM an Unterarm, Prototyp Fräsen.
+```
+
+3. ## Finale Arbeit
+- Dateiname: `_diplomarbeit/robotarm-finale.md`
+
+```
+---
+title: Robotarm – Finale Arbeit
+date: 2026-05-30
+project: Robotarm
+---
+
+**Abstract**  
+Kurzbeschreibung …
+
+**Download**  
+- PDF: [Abschlussarbeit]({{ '/assets/robotarm-abschluss.pdf' | absolute_url }})
+- CAD: [STEP]({{ '/assets/robotarm.step' | absolute_url }})
+- Code: [GitHub Repo](https://github.com/DEINTEAM/robotarm)
+```
+
+## Tipps
+- Alle Dateien eines Projekts mit gleichem project: taggen → Index gruppiert sauber.
+- Für mehrere Projekte: einfach neue Updates mit anderem project: anlegen.
+
+___
+
+5. ## 🔧 Mini-Check bei neuen Einträgen
+- Datei im richtigen Ordner? (_lab, _maschinenbau, _diplomarbeit)
+- Front-Matter oben mit --- geöffnet/geschlossen?
+- Bei `_lab/_diplomarbeit: date:` gesetzt (wird sortiert).
+- Bei `_maschinenbau: weight:` gesetzt (Reihenfolge).
+- Cover/PDF-Pfade beginnen mit /assets/… und existieren.
+
+
+
+
 
 
 
