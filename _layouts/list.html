@@ -2,23 +2,36 @@
 layout: site
 ---
 <h1>{{ page.title }}</h1>
+
 {% assign coll = site.collections | where: "label", page.collection | first %}
 {% if coll and coll.docs %}
-{% assign items = coll.docs | sort: "date" | reverse %}
-{% for item in items %}
-<article class="card" style="margin-bottom:16px;">
-<h2 style="margin:0 0 6px;"><a href="{{ item.url | relative_url }}">{{ item.title }}</a></h2>
-<p class="muted" style="margin:0 0 8px;">📅 {{ item.date | date: "%d.%m.%Y" }}</p>
-{% if item.cover %}
-<img src="{{ item.cover | relative_url }}" alt="" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;border:1px solid var(--border);margin:6px 0 10px;">
-{% endif %}
-{% if item.excerpt %}
-<p class="muted">{{ item.excerpt | strip_html | truncate: 200 }}</p>
-{% elsif item.description %}
-<p class="muted">{{ item.description }}</p>
-{% endif %}
-</article>
-{% endfor %}
+  {% assign docs = coll.docs %}
+
+  {%- comment -%}
+    Sortierlogik:
+    - Wenn die Seite (z. B. lab/index.md) `sort_by:` setzt, nach diesem Feld sortieren
+    - Sonst nach `date` absteigend (für Blog/Chronologie)
+  {%- endcomment -%}
+  {% if page.sort_by %}
+    {% assign items = docs | sort: page.sort_by %}
+  {% else %}
+    {% assign items = docs | sort: "date" | reverse %}
+  {% endif %}
+
+  {% for item in items %}
+    <article class="card" style="margin-bottom:16px;">
+      <h2 style="margin:0 0 6px;"><a href="{{ item.url | absolute_url }}">{{ item.title }}</a></h2>
+      {% if item.date %}<p class="muted" style="margin:0 0 8px;">📅 {{ item.date | date: "%d.%m.%Y" }}</p>{% endif %}
+      {% if item.cover %}
+        <img src="{{ item.cover | absolute_url }}" alt="" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;border:1px solid var(--border);margin:6px 0 10px;">
+      {% endif %}
+      {% if item.excerpt %}
+        <p class="muted">{{ item.excerpt | strip_html | truncate: 200 }}</p>
+      {% elsif item.description %}
+        <p class="muted">{{ item.description }}</p>
+      {% endif %}
+    </article>
+  {% endfor %}
 {% else %}
-<p class="muted">Keine Einträge gefunden. Lege Dateien in <code>_{{ page.collection }}</code> an.</p>
+  <p class="muted">Keine Einträge gefunden. Lege Dateien in <code>_{{ page.collection }}</code> an.</p>
 {% endif %}
