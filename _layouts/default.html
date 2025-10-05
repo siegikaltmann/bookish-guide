@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{ page.title }} – {{ site.title }}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+</head>
+<body class="{{ page.theme | default: 'theme-sky' }}">
+<header class="nav">
+<div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+<a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+<div class="links">
+<a href="{{ '/' | relative_url }}">Start</a>
+<a href="{{ '/lab/' | relative_url }}">Labor</a>
+<a href="{{ '/maschinenbau/' | relative_url }}">Maschinenbau</a>
+<a href="{{ '/diplomarbeit/' | relative_url }}">Diplomarbeiten</a>
+</div>
+</div>
+</header>
+
+<main class="container">
+{{ content }}
+</main>
+
+<footer>
+<div class="container">© <span id="y"></span> {{ site.title }}</div>
+</footer>
+
+<script>
+// Jahr automatisch
+document.getElementById('y').textContent = new Date().getFullYear();
+
+// Aktiver Menüpunkt
+(function(){
+var base = "{{ site.baseurl }}";
+var path = location.pathname.replace(base,'');
+var file = path;
+document.querySelectorAll('.links a').forEach(function(a){
+var href = a.getAttribute('href');
+if (href === path || href === file) { a.classList.add('active'); }
+});
+})();
+</script>
+</body>
+</html>
