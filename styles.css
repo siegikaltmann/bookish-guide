@@ -72,3 +72,37 @@ footer {
   .links a:hover { background: #161922; }
   .card { box-shadow: 0 8px 24px rgba(0,0,0,.25); }
 }
+/* ===== Farb-Themes (hell + Dark-Mode) =============================== */
+/* Anwendung: <body class="theme-sky">  (oder theme-emerald / -violet / -amber) */
+
+/* --- SKY: klassisch & klar (Blau) --- */
+body.theme-sky{
+  --bg:#f7faff; --card:#ffffff; --text:#0a0a0a; --muted:#5d6b79; --brand:#0a66ff; --border:#e7ecf5;
+}
+/* --- EMERALD: frisch & ruhig (Grün) --- */
+body.theme-emerald{
+  --bg:#f0fff8; --card:#ffffff; --text:#1b2b25; --muted:#567066; --brand:#10b981; --border:#e2f3ec;
+}
+/* --- VIOLET: kreativ & elegant (Lila) --- */
+body.theme-violet{
+  --bg:#faf7ff; --card:#ffffff; --text:#1c1127; --muted:#6a5a7a; --brand:#7c3aed; --border:#eee7fb;
+}
+/* --- AMBER: freundlich & lebendig (Gelb/Orange) --- */
+body.theme-amber{
+  --bg:#fffaf2; --card:#ffffff; --text:#2e2000; --muted:#7a663f; --brand:#f59e0b; --border:#f1e7d4;
+}
+
+/* Dark-Mode – passt Grundfarben automatisch an; Brand bleibt themenspezifisch */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b0c10; --card:#111318; --text:#e8eaf0; --muted:#a1a6b3; --border:#1f2330;
+  }
+  /* Optional: leicht hellere Brand-Töne im Dark-Mode je Theme */
+  body.theme-sky   { --brand:#4f8cff; }
+  body.theme-emerald{ --brand:#34d399; }
+  body.theme-violet{ --brand:#9a63ff; }
+  body.theme-amber { --brand:#fbbf24; }
+
+  .links a:hover { background:#161922; }
+  .card { box-shadow:0 8px 24px rgba(0,0,0,.25); }
+}
