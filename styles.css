@@ -112,3 +112,68 @@ body.theme-amber{
 .tile .t-title{ font-weight:700; margin-top:10px; }
 .tile .t-desc{ color:var(--muted); font-size:14px; }
 .tile.card{ padding:14px; }
+
+/* ===== Tiles – Feintuning ========================================= */
+.tiles{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:20px;
+  align-items: stretch;
+}
+
+a.tile.card{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  padding:16px;
+  text-decoration:none;
+  color:var(--text);
+  transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
+}
+
+a.tile.card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+}
+
+a.tile.card:focus-visible{
+  outline: 2px solid var(--brand);
+  outline-offset: 4px;
+}
+
+.tile img{
+  width:100%;
+  aspect-ratio: 16/9;        /* gleichmäßige Höhe, weniger Layout-Shift */
+  object-fit: cover;
+  border-radius:12px;
+  border:1px solid var(--border);
+  display:block;
+}
+
+.tile .t-title{
+  font-weight:700;
+  font-size:18px;
+  margin-top:12px;
+}
+
+.tile .t-desc{
+  color:var(--muted);
+  font-size:14px;
+  margin-top:4px;
+  /* füllt den Rest, damit Footer/CTA unten klebt */
+  flex:1 1 auto;
+}
+
+/* Optional: dezenter Hover-Hintergrund */
+a.tile.card:hover{ background: color-mix(in srgb, var(--bg) 70%, var(--card) 30%); }
+
+/* Reduced motion: Hover-Animationen abschwächen */
+@media (prefers-reduced-motion: reduce){
+  a.tile.card{ transition: none; }
+  a.tile.card:hover{ transform:none; }
+}
+
+/* Dark-Mode: etwas kräftigere Schatten */
+@media (prefers-color-scheme: dark){
+  a.tile.card:hover{ box-shadow: 0 12px 30px rgba(0,0,0,.35); }
+}
