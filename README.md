@@ -38,10 +38,10 @@ Damit bleiben alle Listen automatisch aktuell – die Startseite verlinkt sauber
 - Cover-Bild (optional): Front-Matter `cover: /assets/dein-bild.jpg` (ideal 1200×630).
 
 ## 🧪 _lab — „Wöchentlicher Fortschritt“
-Ordner: `_lab/`
-Listen-Seite: `lab/index.md` (nutzt `layout: list`)
-So legst du eine Woche an
-Dateiname: `_lab/2025-10-12-woche-02.md`
+- Ordner: `_lab/`
+- Listen-Seite: `lab/index.md` (nutzt `layout: list`)
+- So legst du eine Woche an
+-- Dateiname: `_lab/2025-10-12-woche-02.md`
 
 ```
 ---
