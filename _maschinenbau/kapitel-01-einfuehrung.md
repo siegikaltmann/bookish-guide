@@ -1,6 +1,7 @@
 ---
-title: Kapitel 1 – Einführung & Grundbegriffe
-weight: 1 # Sortierreihenfolge im Index
+layout: doc
+title: Kapitel 01 – Einführung
+weight: 1
 ---
 
 **Lernziele:**
@@ -15,3 +16,6 @@ $$x=3$$
 
 **Übung:**
 1. Ein Körper wird mit 50 N über 3 m verschoben. Arbeit?
+
+
+
