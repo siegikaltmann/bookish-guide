@@ -526,3 +526,154 @@ tr:nth-child(even) td { background: color-mix(in srgb, var(--bg) 80%, var(--card
     linear-gradient(135deg, #eef2f6 0%, #f3f6f9 55%, #fafbfd 100%) !important;
 }
 
+:root{
+  /* Basis-Palette – passe sie hier zentral an */
+  --tgm-blue: #005aa9;      /* TGM Blau */
+  --htl-blue: #0077c8;      /* HTL Blau */
+  --accent-pink: #ff3ea5;   /* Pink */
+  --accent-green: #21c36f;  /* Grün */
+  --accent-orange: #ff7a18; /* Orange */
+  --accent-yellow: #ffd166; /* Gelb */
+  --text-hero: #0b1020;     /* dunkler Text für guten Kontrast */
+  --text-hero-weak: rgba(11,16,32,.75);
+
+  /* Gradient-Stopps (kreativ, aber dezent) */
+  --g1: color-mix(in oklab, var(--tgm-blue) 85%, white 15%);
+  --g2: color-mix(in oklab, var(--htl-blue) 70%, var(--accent-orange) 30%);
+  --g3: color-mix(in oklab, var(--accent-pink) 40%, var(--accent-yellow) 60%);
+  --g4: color-mix(in oklab, var(--accent-green) 40%, white 60%);
+
+  /* Größen/Spacing */
+  --radius-2xl: 1.25rem;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* Utility: zentrierter Inhalt */
+.container{
+  width:min(1100px, 92%);
+  margin-inline:auto;
+}
+
+.hero{
+  position: relative;
+  overflow: clip;
+  padding: clamp(4rem, 6vw, 7rem) 0;
+  border-radius: 0 0 var(--radius-2xl) var(--radius-2xl);
+  background: radial-gradient(1200px 800px at 10% 20%, var(--g1), transparent 60%),
+              radial-gradient(900px 700px at 90% 10%, var(--g3), transparent 55%),
+              linear-gradient(135deg, var(--g2), var(--g4));
+  color: var(--text-hero);
+  box-shadow: var(--shadow-soft);
+  isolation: isolate;
+}
+
+/* Stärkerer, kontrastreicherer Modus (du wolltest “hero-strong”) */
+.hero--strong{
+  background: radial-gradient(1200px 800px at 15% 15%, var(--g1), transparent 60%),
+              radial-gradient(900px 700px at 85% 20%, var(--g3), transparent 55%),
+              linear-gradient(135deg, color-mix(in oklab, var(--htl-blue) 80%, #0e1a2b 20%), var(--g4));
+}
+
+/* Deko-Layer */
+.hero__bg{
+  position:absolute; inset:0;
+  pointer-events:none;
+  z-index:0;
+}
+
+/* sanft animierte Blobs */
+.hero__blob{
+  position:absolute; width:46vmax; height:46vmax; border-radius:50%;
+  filter: blur(60px);
+  opacity:.25; mix-blend-mode:soft-light;
+  animation: float 24s ease-in-out infinite;
+}
+.hero__blob--a{
+  background: radial-gradient(circle at 30% 30%, var(--accent-pink), transparent 60%);
+  top:-20vmax; left:-10vmax; animation-delay:-6s;
+}
+.hero__blob--b{
+  background: radial-gradient(circle at 70% 70%, var(--accent-green), transparent 60%);
+  bottom:-22vmax; right:-8vmax;
+}
+
+/* geometrisches Liniennetz */
+.hero__grid{
+  position:absolute; inset:-10%;
+  background-image:
+    linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255,255,255,.12) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask: radial-gradient(80% 60% at 50% 40%, #000 60%, transparent 100%);
+  opacity:.25;
+  transform: perspective(800px) rotateX(35deg) translateY(12%);
+  animation: slow-pan 40s linear infinite;
+}
+
+/* Inhalt */
+.hero__inner{ position:relative; z-index:1; text-align:center; }
+.hero__title{
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 .75rem;
+  font-weight: 800;
+}
+.hero__subtitle{
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  max-width: 65ch;
+  margin: 0 auto 1.75rem;
+  color: var(--text-hero-weak);
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex; gap:.6rem; align-items:center; justify-content:center;
+  padding:.9rem 1.1rem;
+  border-radius: .85rem;
+  font-weight: 600; text-decoration:none;
+  border:1px solid transparent;
+  transition: transform .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+}
+.btn--primary{
+  background: linear-gradient(135deg, var(--tgm-blue), var(--htl-blue));
+  color: #fff;
+}
+.btn--primary:hover{ transform: translateY(-2px); }
+.btn--ghost{
+  background: rgba(255,255,255,.65);
+  border-color: rgba(0,0,0,.06);
+  color: var(--text-hero);
+}
+.btn--ghost:hover{
+  background: rgba(255,255,255,.85);
+  transform: translateY(-2px);
+}
+
+/* Bewegungen */
+@keyframes float{
+  0%,100%{ transform: translate3d(0,0,0) scale(1); }
+  50%    { transform: translate3d(2vmax,-2vmax,0) scale(1.05); }
+}
+@keyframes slow-pan{
+  0%   { background-position: 0 0, 0 0; }
+  100% { background-position: 200px 200px, 200px 200px; }
+}
+
+/* Respektiere reduzierte Bewegung */
+@media (prefers-reduced-motion: reduce){
+  .hero__blob, .hero__grid { animation: none; }
+}
+
+/* Optional: Dark Mode (wenn du body[data-theme="dark"] nutzt) */
+@media (prefers-color-scheme: dark){
+  .hero{
+    color: #f4f6fb;
+    --text-hero: #f4f6fb;
+    --text-hero-weak: rgba(244,246,251,.8);
+    box-shadow: none;
+  }
+  .btn--ghost{ background: rgba(0,0,0,.25); color:#fff; border-color: rgba(255,255,255,.12);}
+  .btn--ghost:hover{ background: rgba(0,0,0,.35); }
+}
