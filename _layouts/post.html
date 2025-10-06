@@ -12,4 +12,42 @@ layout: site
   {% endif %}
 
   {{ content }}
+
+  <hr style="margin:24px 0; border:0; border-top:1px solid var(--border);">
+
+  {%- comment -%}
+    Navigation innerhalb der aktuellen Collection (z. B. _lab), nach Datum sortiert.
+    prev = älterer Beitrag, next = neuerer Beitrag
+  {%- endcomment -%}
+  {% assign coll = site.collections | where: "label", page.collection | first %}
+  {% if coll and coll.docs %}
+    {% assign items = coll.docs | sort: "date" %}
+    {% assign prev = '' %}
+    {% assign next = '' %}
+    {% assign found = 0 %}
+    {% for it in items %}
+      {% if found == 1 and next == '' %}
+        {% assign next = it %}
+        {% break %}
+      {% endif %}
+      {% if it.url == page.url %}
+        {% assign found = 1 %}
+      {% else %}
+        {% assign prev = it %}
+      {% endif %}
+    {% endfor %}
+
+    <nav class="post-nav" aria-label="Beitragsnavigation" style="display:flex;justify-content:space-between;gap:12px;">
+      <div>
+        {% if prev %}
+          <a class="btn" href="{{ prev.url | absolute_url }}">← {{ prev.title }}</a>
+        {% endif %}
+      </div>
+      <div style="margin-left:auto;">
+        {% if next %}
+          <a class="btn" href="{{ next.url | absolute_url }}">{{ next.title }} →</a>
+        {% endif %}
+      </div>
+    </nav>
+  {% endif %}
 </article>
