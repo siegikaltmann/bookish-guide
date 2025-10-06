@@ -306,3 +306,39 @@ tr:nth-child(even) td { background: color-mix(in srgb, var(--bg) 80%, var(--card
   .btn--primary:hover,
   .feature__item .btn:hover{ transform:none; box-shadow:none; filter:none; }
 }
+
+/* ===== Pastell-Hero-Varianten ====================================== */
+/* Gemeinsame Lesbarkeit: dunkler Text, kein Text-Schatten */
+.layout--splash.hero-blue  .page__hero--overlay,
+.layout--splash.hero-sunset.page__hero--overlay,
+.layout--splash.hero-citrus.page__hero--overlay { color:#0b1220; }
+.layout--splash.hero-blue  .page__title,
+.layout--splash.hero-blue  .page__lead,
+.layout--splash.hero-sunset .page__title,
+.layout--splash.hero-sunset .page__lead,
+.layout--splash.hero-citrus .page__title,
+.layout--splash.hero-citrus .page__lead { text-shadow:none; }
+
+/* 1) Pastell-Blau */
+.layout--splash.hero-blue .page__hero--overlay{
+  background-image: linear-gradient(135deg, #eaf3ff 0%, #f2f8ff 50%, #f9fcff 100%) !important;
+}
+
+/* 2) Sunset (soft orange → rosé → sehr hell) */
+.layout--splash.hero-sunset .page__hero--overlay{
+  background-image: linear-gradient(135deg, #ffe8cc 0%, #ffeef0 55%, #fff9f0 100%) !important;
+}
+
+/* 3) Citrus (apricot → gelblich) */
+.layout--splash.hero-citrus .page__hero--overlay{
+  background-image: linear-gradient(135deg, #ffe7d1 0%, #fff0c9 60%, #fff9e6 100%) !important;
+}
+
+/* Buttons auf hellem Grund: leichte Outline für Sekundärbuttons */
+.layout--splash.hero-blue .btn,
+.layout--splash.hero-sunset .btn,
+.layout--splash.hero-citrus .btn{
+  border-color: rgba(0,0,0,.08);
+}
+
+/* Primärbutton bleibt deine Brand-Farbe (kommt aus head/custom oder mm-tuning) */
