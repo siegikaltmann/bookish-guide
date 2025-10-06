@@ -1,0 +1,40 @@
+{% comment %}
+  Kapitel-Navigation innerhalb der Collection "maschinenbau"
+  Sortierung: zuerst nach weight (aufsteigend), Kapitel ohne weight danach alphabetisch.
+{% endcomment %}
+{% assign with_w = site.maschinenbau | where_exp: "i","i.weight" | sort: "weight" %}
+{% assign without_w = site.maschinenbau | where_exp: "i","i.weight == nil" | sort: "title" %}
+{% assign items = with_w | concat: without_w %}
+
+{% assign prev = nil %}{% assign next = nil %}{% assign found = 0 %}
+
+{% for it in items %}
+  {% if found == 1 and next == nil %}
+    {% assign next = it %}
+    {% break %}
+  {% endif %}
+  {% if it.url == page.url %}
+    {% assign found = 1 %}
+  {% else %}
+    {% assign prev = it %}
+  {% endif %}
+{% endfor %}
+
+<nav class="card" aria-label="Kapitel-Navigation"
+     style="display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:22px;">
+  <div>
+    {% if prev %}
+      <a class="btn" href="{{ prev.url | absolute_url }}">← {% if prev.weight %}Kapitel {{ prev.weight }}:{% endif %} {{ prev.title }}</a>
+    {% endif %}
+  </div>
+
+  <div>
+    <a class="btn" href="{{ '/maschinenbau/' | absolute_url }}">Zur Übersicht</a>
+  </div>
+
+  <div>
+    {% if next %}
+      <a class="btn" href="{{ next.url | absolute_url }}">{% if next.weight %}Kapitel {{ next.weight }}:{% endif %} {{ next.title }} →</a>
+    {% endif %}
+  </div>
+</nav>
