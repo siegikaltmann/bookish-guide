@@ -9,9 +9,36 @@ search: true
 search_full_content: true   # optional: durchsucht den ganzen Inhalt, nicht nur Auszüge
 
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
+  - jekyll-seo-tag
+
+# --- SEO-Infos ---
+logo: /favicon.svg
+author: "Siegfried Kaltmann"
+github_username: siegikaltmann
+# twitter_username: dein_twitter  # falls vorhanden
+
+# Default-OG-Bilder pro Collection (für Social Cards)
+defaults:
+  - scope: { path: "", type: lab }
+    values:
+      layout: post
+      theme: theme-emerald
+      image: /assets/cover-lab.jpg
+  - scope: { path: "", type: maschinenbau }
+    values:
+      layout: doc
+      theme: theme-violet
+      image: /assets/cover-mb.jpg
+  - scope: { path: "", type: diplomarbeit }
+    values:
+      layout: post
+      theme: theme-amber
+      image: /assets/cover-diplomarbeit.jpg
+
   
 collections:
   lab:
