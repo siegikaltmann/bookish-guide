@@ -278,3 +278,31 @@ tr:nth-child(even) td { background: color-mix(in srgb, var(--bg) 80%, var(--card
 }
 /* Im Screen verstecken wir .print-only standardmäßig */
 .print-only { display:none; }
+
+/* ===== Hero-Kontrast & Button-Hover ================================== */
+.page__hero--overlay .page__title,
+.page__hero--overlay .page__lead{
+  text-shadow: 0 2px 12px rgba(0,0,0,.45);
+}
+
+/* Primärbuttons etwas „snappier“ */
+.btn--primary:hover,
+.btn--primary:focus{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(0,0,0,.18);
+}
+
+/* Feature-Row: Button-Hover + kleine Distanz zur Excerpt-Zeile */
+.feature__item .btn{
+  margin-top: .35rem;
+}
+.feature__item .btn:hover{
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+/* Reduced motion: Animationen abschwächen */
+@media (prefers-reduced-motion: reduce){
+  .btn--primary:hover,
+  .feature__item .btn:hover{ transform:none; box-shadow:none; filter:none; }
+}
