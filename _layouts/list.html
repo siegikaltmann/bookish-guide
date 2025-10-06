@@ -9,8 +9,8 @@ layout: site
 
   {%- comment -%}
     Sortierlogik:
-    - Wenn die Seite (z. B. lab/index.md) `sort_by:` setzt, nach diesem Feld sortieren
-    - Sonst nach `date` absteigend (für Blog/Chronologie)
+    - Wenn die Seite (z. B. lab/index.md) `sort_by:` setzt, danach sortieren
+    - Sonst nach `date` absteigend (neu → alt)
   {%- endcomment -%}
   {% if page.sort_by %}
     {% assign items = docs | sort: page.sort_by %}
@@ -19,16 +19,43 @@ layout: site
   {% endif %}
 
   {% for item in items %}
-    <article class="card" style="margin-bottom:16px;">
-      <h2 style="margin:0 0 6px;"><a href="{{ item.url | absolute_url }}">{{ item.title }}</a></h2>
-      {% if item.date %}<p class="muted" style="margin:0 0 8px;">📅 {{ item.date | date: "%d.%m.%Y" }}</p>{% endif %}
+    <article class="card" style="position:relative; margin-bottom:16px; padding-top:18px;">
+      {%- if item.date -%}
+        <div style="
+            position:absolute; right:16px; top:16px;
+            background: color-mix(in srgb, var(--brand) 10%, var(--card) 90%);
+            border: 1px solid color-mix(in srgb, var(--brand) 25%, var(--border) 75%);
+            color: var(--text);
+            padding: 4px 10px; border-radius: 999px; font-size: 12px;">
+          📅 {{ item.date | date: "%d.%m.%Y" }}
+        </div>
+      {%- endif -%}
+
+      <h2 style="margin:0 0 6px;">
+        <a href="{{ item.url | absolute_url }}">{{ item.title }}</a>
+      </h2>
+
       {% if item.cover %}
         <img src="{{ item.cover | absolute_url }}" alt="" style="width:100%;max-height:220px;object-fit:cover;border-radius:12px;border:1px solid var(--border);margin:6px 0 10px;">
       {% endif %}
+
       {% if item.excerpt %}
         <p class="muted">{{ item.excerpt | strip_html | truncate: 200 }}</p>
       {% elsif item.description %}
         <p class="muted">{{ item.description }}</p>
+      {% endif %}
+
+      {% if item.tags %}
+        <p class="muted" style="margin-top:10px;">
+          {% for t in item.tags %}
+            <span style="
+              display:inline-block; margin:0 6px 6px 0; padding:3px 8px; border-radius:999px;
+              background: color-mix(in srgb, var(--bg) 70%, var(--card) 30%);
+              border:1px solid var(--border); font-size:12px;">
+              #{{ t }}
+            </span>
+          {% endfor %}
+        </p>
       {% endif %}
     </article>
   {% endfor %}
