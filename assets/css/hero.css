@@ -15,7 +15,7 @@
 }
 
 /* Container */
-.container{ width:min(1100px, 92%); margin-inline:auto; }
+.hero .container{ width:min(1100px, 92%); margin-inline:auto; }
 
 /* Hero-Basis */
 .hero{
@@ -62,24 +62,24 @@
 }
 
 /* Buttons */
-.btn{
+.hero .btn{
   display:inline-flex; align-items:center; justify-content:center;
   gap:.6rem; padding:.9rem 1.1rem;
   border-radius:.85rem; font-weight:600;
   text-decoration:none; transition:.2s ease;
   border:1px solid transparent; box-shadow:0 6px 16px rgba(0,0,0,.06);
 }
-.btn--primary{
+.hero .btn--primary{
   background: linear-gradient(135deg, var(--accent-orange), var(--accent-pink));
   color:#fff;
 }
-.btn--primary:hover{ transform:translateY(-2px) scale(1.03); }
+.hero .btn--primary:hover{ transform:translateY(-2px) scale(1.03); }
 .btn--ghost{
   background: rgba(255,255,255,.7);
   border-color: rgba(0,0,0,.06);
   color: var(--text-hero);
 }
-.btn--ghost:hover{
+.hero .btn--ghost:hover{
   background: rgba(255,255,255,.85);
   transform: translateY(-2px);
 }
@@ -89,6 +89,19 @@
   0%,100%{ transform:translate3d(0,0,0) scale(1); }
   50%{ transform:translate3d(2vmax,-2vmax,0) scale(1.05); }
 }
+
+/* --- Tweaks: Homepage / Splash --- */
+.layout--splash .hero {
+  /* etwas weniger Luft unter dem Hero */
+  margin-bottom: clamp(1.5rem, 2vw, 2.25rem);
+}
+
+.layout--splash .feature__wrapper {
+  /* harmonisierter Abstand zwischen den Kacheln */
+  gap: 1.25rem;
+}
+
+
 @media (prefers-reduced-motion: reduce){
   .hero__blob{ animation:none; }
 }
