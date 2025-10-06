@@ -344,3 +344,111 @@ tr:nth-child(even) td { background: color-mix(in srgb, var(--bg) 80%, var(--card
 }
 
 /* Primärbutton bleibt deine Brand-Farbe (kommt aus head/custom oder mm-tuning) */
+
+/* ===== Hero-Farben (Pastell) + Brand-Farbe für Buttons/Links ================= */
+/* Gemeinsame Lesbarkeit */
+.layout--splash.hero-blue    .page__title,
+.layout--splash.hero-blue    .page__lead,
+.layout--splash.hero-sunset  .page__title,
+.layout--splash.hero-sunset  .page__lead,
+.layout--splash.hero-citrus  .page__title,
+.layout--splash.hero-citrus  .page__lead,
+.layout--splash.hero-pink    .page__title,
+.layout--splash.hero-pink    .page__lead,
+.layout--splash.hero-green   .page__title,
+.layout--splash.hero-green   .page__lead,
+.layout--splash.hero-htlblue .page__title,
+.layout--splash.hero-htlblue .page__lead,
+.layout--splash.hero-tgmblue .page__title,
+.layout--splash.hero-tgmblue .page__lead { color:#0b1220; text-shadow:none; }
+
+/* Brand auf Variante mappen (für .btn--primary & Links) */
+.layout--splash.hero-blue    { --mm-brand:#0a66ff; }
+.layout--splash.hero-sunset  { --mm-brand:#ff7a59; }   /* warmes Orange */
+.layout--splash.hero-citrus  { --mm-brand:#f59e0b; }   /* Amber */
+.layout--splash.hero-pink    { --mm-brand:#ec4899; }   /* Pink */
+.layout--splash.hero-green   { --mm-brand:#10b981; }   /* Grün/Emerald */
+.layout--splash.hero-htlblue { --mm-brand:#1e66f5; }   /* deine HTL-Blau-Variante */
+.layout--splash.hero-tgmblue { --mm-brand:#00b5f0; }   /* TGM/Cyan-Variante */
+
+/* 1) Blue (bestehend) */
+.layout--splash.hero-blue .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(10,102,255,.26), rgba(10,102,255,.26)),
+    linear-gradient(135deg, #eaf3ff 0%, #f2f8ff 55%, #f9fcff 100%) !important;
+}
+.layout--splash.hero-blue.hero-strong .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(10,102,255,.42), rgba(10,102,255,.42)),
+    linear-gradient(135deg, #eaf3ff 0%, #f2f8ff 55%, #f9fcff 100%) !important;
+}
+
+/* 2) Sunset (bestehend) */
+.layout--splash.hero-sunset .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(255,122,89,.22), rgba(255,122,89,.22)),
+    linear-gradient(135deg, #ffe8cc 0%, #ffeef0 55%, #fff9f0 100%) !important;
+}
+.layout--splash.hero-sunset.hero-strong .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(255,122,89,.38), rgba(255,122,89,.38)),
+    linear-gradient(135deg, #ffe8cc 0%, #ffeef0 55%, #fff9f0 100%) !important;
+}
+
+/* 3) Citrus (bestehend) */
+.layout--splash.hero-citrus .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(245,158,11,.22), rgba(245,158,11,.22)),
+    linear-gradient(135deg, #ffe7d1 0%, #fff0c9 60%, #fff9e6 100%) !important;
+}
+.layout--splash.hero-citrus.hero-strong .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(245,158,11,.38), rgba(245,158,11,.38)),
+    linear-gradient(135deg, #ffe7d1 0%, #fff0c9 60%, #fff9e6 100%) !important;
+}
+
+/* 4) Pink (neu) */
+.layout--splash.hero-pink .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(236,72,153,.22), rgba(236,72,153,.22)),
+    linear-gradient(135deg, #ffe3f2 0%, #fff0f7 55%, #fff8fb 100%) !important;
+}
+.layout--splash.hero-pink.hero-strong .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(236,72,153,.40), rgba(236,72,153,.40)),
+    linear-gradient(135deg, #ffe3f2 0%, #fff0f7 55%, #fff8fb 100%) !important;
+}
+
+/* 5) Grün (neu) */
+.layout--splash.hero-green .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(16,185,129,.22), rgba(16,185,129,.22)),
+    linear-gradient(135deg, #e7f8ef 0%, #eefbf5 55%, #f7fdf9 100%) !important;
+}
+.layout--splash.hero-green.hero-strong .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(16,185,129,.40), rgba(16,185,129,.40)),
+    linear-gradient(135deg, #e7f8ef 0%, #eefbf5 55%, #f7fdf9 100%) !important;
+}
+
+/* HTL/TGM (wie zuvor, jetzt konsistent mit hero-strong) */
+.layout--splash.hero-htlblue .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(30,102,245,.26), rgba(30,102,245,.26)),
+    linear-gradient(135deg, #dbe7ff 0%, #e7efff 55%, #f3f8ff 100%) !important;
+}
+.layout--splash.hero-htlblue.hero-strong .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(30,102,245,.42), rgba(30,102,245,.42)),
+    linear-gradient(135deg, #dbe7ff 0%, #e7efff 55%, #f3f8ff 100%) !important;
+}
+.layout--splash.hero-tgmblue .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(0,181,240,.24), rgba(0,181,240,.24)),
+    linear-gradient(135deg, #d9f3ff 0%, #e8faff 55%, #f5fdff 100%) !important;
+}
+.layout--splash.hero-tgmblue.hero-strong .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(0,181,240,.40), rgba(0,181,240,.40)),
+    linear-gradient(135deg, #d9f3ff 0%, #e8faff 55%, #f5fdff 100%) !important;
+}
