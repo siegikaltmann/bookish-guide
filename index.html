@@ -1,29 +1,8 @@
 ---
 layout: splash
 title: TGM – Labor · GMB · Diplomarbeit
-classes: wide hero-pink # hero-strong   # oder: hero-tgmblue | hero-amber| hero-blue | hero-sunset | hero-citrus | hero-pink | hero-green | hero-ocean | hero-mint | hero-slate | hero-htlblue |hero-lilac 
-# für mehr Kontrast zusätzlich: hero-strong
+classes: wide
 excerpt: "Raspberry Pi Pico Labor • Maschinenbau-Skriptum • Diplomarbeiten"
-
-
-header:
-  overlay_color: "#ffffff"
-  overlay_filter: "0"
-
-header:
-  overlay_color: "#ffffff"
-  overlay_filter: "0"
-  actions:
-    - label: "Zum Labor"
-      url: /lab/
-      btn_class: "btn--primary btn--large"
-    - label: "Zum Skriptum"
-      url: /maschinenbau/
-      btn_class: "btn btn--large"
-    - label: "Diplomarbeiten"
-      url: /diplomarbeit/
-      btn_class: "btn btn--large"
-
 
 feature_row:
   - image_path: /assets/cover-lab.jpg
@@ -48,7 +27,6 @@ feature_row:
     btn_label: "Öffnen"
     btn_class: "btn--primary"
 ---
-{% include feature_row %}
 
 <section class="hero hero--strong">
   <div class="hero__bg" aria-hidden="true">
@@ -63,10 +41,13 @@ feature_row:
     <p class="hero__subtitle">
       Technisches Wissen, visuell ansprechend und modern präsentiert.
     </p>
+
     <div class="hero__cta">
-      <a class="btn btn--primary" href="#start">Los geht’s</a>
-      <a class="btn btn--ghost" href="#uebersicht">Zur Übersicht</a>
+      <a class="btn btn--primary btn--large" href="/lab/">Zum Labor</a>
+      <a class="btn btn--ghost btn--large" href="/maschinenbau/">Zum Skriptum</a>
+      <a class="btn btn--ghost btn--large" href="/diplomarbeit/">Diplomarbeiten</a>
     </div>
   </div>
 </section>
 
+{% include feature_row %}
