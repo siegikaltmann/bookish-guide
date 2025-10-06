@@ -374,7 +374,7 @@ tr:nth-child(even) td { background: color-mix(in srgb, var(--bg) 80%, var(--card
 /* 1) Blue (bestehend) */
 .layout--splash.hero-blue .page__hero--overlay{
   background-image:
-    linear-gradient(rgba(10,102,255,.26), rgba(10,102,255,.26)),
+    linear-gradient(rgba(10,102,255,.26), rgba(10,102,255,.26)),  /* <— hier Alpha höher = dunkler */
     linear-gradient(135deg, #eaf3ff 0%, #f2f8ff 55%, #f9fcff 100%) !important;
 }
 .layout--splash.hero-blue.hero-strong .page__hero--overlay{
