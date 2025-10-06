@@ -1,1 +1,280 @@
+/* styles.css – Basisthema */
+:root{
+  --bg:#f7f7fb;
+  --card:#ffffff;
+  --text:#222;
+  --muted:#666;
+  --brand:#0a66ff;
+  --border:#e8e8ef;
+}
 
+* { box-sizing: border-box; }
+html, body { margin:0; padding:0; }
+body {
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Navigation */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 20px;
+}
+.brand { font-weight: 700; text-decoration: none; color: var(--text); }
+.links a {
+  text-decoration: none; color: var(--text);
+  margin-left: 14px; padding: 6px 10px; border-radius: 8px;
+}
+.links a:hover { background: var(--bg); }
+.links a.active { color: var(--brand); }
+
+/* Layout */
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+main { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 14px; padding: 22px; box-shadow: 0 4px 16px rgba(0,0,0,.04);
+}
+
+/* Typografie */
+h1, h2, h3 { line-height: 1.2; margin: 0 0 12px; }
+p { margin: 0 0 12px; color: var(--text); }
+.muted { color: var(--muted); }
+
+/* Footer */
+footer {
+  margin: 50px 0 30px; text-align: center; color: var(--muted); font-size: 14px;
+}
+
+/* Responsiv */
+@media (max-width: 640px){
+  .links a { margin-left: 8px; }
+}
+/* Farbalternativen – einfach die Werte oben im :root tauschen */
+.theme-sky  { --brand:#0a66ff; }
+.theme-emerald { --brand:#10b981; }
+.theme-violet { --brand:#7c3aed; }
+
+/* Auto-Dark-Mode */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b0c10;
+    --card:#111318;
+    --text:#e8eaf0;
+    --muted:#a1a6b3;
+    --brand:#4f8cff;
+    --border:#1f2330;
+  }
+  .links a:hover { background: #161922; }
+  .card { box-shadow: 0 8px 24px rgba(0,0,0,.25); }
+}
+/* ===== Farb-Themes (hell + Dark-Mode) =============================== */
+/* Anwendung: <body class="theme-sky">  (oder theme-emerald / -violet / -amber) */
+
+/* --- SKY: klassisch & klar (Blau) --- */
+body.theme-sky{
+  --bg:#f7faff; --card:#ffffff; --text:#0a0a0a; --muted:#5d6b79; --brand:#0a66ff; --border:#e7ecf5;
+}
+/* --- EMERALD: frisch & ruhig (Grün) --- */
+body.theme-emerald{
+  --bg:#f0fff8; --card:#ffffff; --text:#1b2b25; --muted:#567066; --brand:#10b981; --border:#e2f3ec;
+}
+/* --- VIOLET: kreativ & elegant (Lila) --- */
+body.theme-violet{
+  --bg:#faf7ff; --card:#ffffff; --text:#1c1127; --muted:#6a5a7a; --brand:#7c3aed; --border:#eee7fb;
+}
+/* --- AMBER: freundlich & lebendig (Gelb/Orange) --- */
+body.theme-amber{
+  --bg:#fffaf2; --card:#ffffff; --text:#2e2000; --muted:#7a663f; --brand:#f59e0b; --border:#f1e7d4;
+}
+
+/* Dark-Mode – passt Grundfarben automatisch an; Brand bleibt themenspezifisch */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b0c10; --card:#111318; --text:#e8eaf0; --muted:#a1a6b3; --border:#1f2330;
+  }
+  /* Optional: leicht hellere Brand-Töne im Dark-Mode je Theme */
+  body.theme-sky   { --brand:#4f8cff; }
+  body.theme-emerald{ --brand:#34d399; }
+  body.theme-violet{ --brand:#9a63ff; }
+  body.theme-amber { --brand:#fbbf24; }
+
+  .links a:hover { background:#161922; }
+  .card { box-shadow:0 8px 24px rgba(0,0,0,.25); }
+}
+/* Grid für Kacheln auf der Startseite */
+.tiles{ display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+.tile img{ width:100%; height:140px; object-fit:cover; border-radius:12px; border:1px solid var(--border); }
+.tile .t-title{ font-weight:700; margin-top:10px; }
+.tile .t-desc{ color:var(--muted); font-size:14px; }
+.tile.card{ padding:14px; }
+
+/* ===== Tiles – Feintuning ========================================= */
+.tiles{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:20px;
+  align-items: stretch;
+}
+
+a.tile.card{
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  padding:16px;
+  text-decoration:none;
+  color:var(--text);
+  transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
+}
+
+a.tile.card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+}
+
+a.tile.card:focus-visible{
+  outline: 2px solid var(--brand);
+  outline-offset: 4px;
+}
+
+.tile img{
+  width:100%;
+  aspect-ratio: 16/9;        /* gleichmäßige Höhe, weniger Layout-Shift */
+  object-fit: cover;
+  border-radius:12px;
+  border:1px solid var(--border);
+  display:block;
+}
+
+.tile .t-title{
+  font-weight:700;
+  font-size:18px;
+  margin-top:12px;
+}
+
+.tile .t-desc{
+  color:var(--muted);
+  font-size:14px;
+  margin-top:4px;
+  /* füllt den Rest, damit Footer/CTA unten klebt */
+  flex:1 1 auto;
+}
+
+/* Optional: dezenter Hover-Hintergrund */
+a.tile.card:hover{ background: color-mix(in srgb, var(--bg) 70%, var(--card) 30%); }
+
+/* Reduced motion: Hover-Animationen abschwächen */
+@media (prefers-reduced-motion: reduce){
+  a.tile.card{ transition: none; }
+  a.tile.card:hover{ transform:none; }
+}
+
+/* Dark-Mode: etwas kräftigere Schatten */
+@media (prefers-color-scheme: dark){
+  a.tile.card:hover{ box-shadow: 0 12px 30px rgba(0,0,0,.35); }
+}
+
+/* ===== Typo & Links ================================================== */
+html { scroll-behavior: smooth; }
+body { line-height: 1.7; font-size: 16px; }
+main .card p { margin: 0 0 14px; }
+
+h1 { font-size: clamp(26px, 2.2rem, 36px); margin: 0 0 12px; line-height: 1.2; }
+h2 { font-size: clamp(22px, 1.8rem, 28px); margin: 18px 0 10px; line-height: 1.25; }
+h3 { font-size: clamp(18px, 1.3rem, 22px); margin: 16px 0 8px;  line-height: 1.25; }
+
+a { 
+  color: var(--brand); 
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  text-decoration-color: color-mix(in srgb, var(--brand) 30%, transparent);
+}
+a:hover { text-decoration-color: var(--brand); }
+
+/* ===== Navigation: aktiver Link & Hover ============================== */
+.nav .links a {
+  padding: 6px 10px; border-radius: 10px;
+  text-decoration: none; color: var(--text);
+}
+.nav .links a:hover { background: var(--bg); }
+.nav .links a.active {
+  color: var(--brand);
+  background: color-mix(in srgb, var(--brand) 10%, var(--bg) 90%);
+  border: 1px solid color-mix(in srgb, var(--brand) 25%, var(--border) 75%);
+}
+
+/* Tastatur-Fokus sichtbar machen */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--brand); outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* ===== Code & Pre ===================================================== */
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.95em; background: color-mix(in srgb, var(--bg) 60%, var(--card) 40%);
+  padding: 0.1em 0.35em; border-radius: 6px; border: 1px solid var(--border);
+}
+pre code { background: transparent; border: 0; padding: 0; }
+pre {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 14px; overflow: auto; box-shadow: 0 4px 16px rgba(0,0,0,.04);
+}
+
+/* ===== Tabellen (für Skriptum) ======================================= */
+table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+th, td { padding: 10px 12px; border: 1px solid var(--border); }
+th { text-align: left; background: color-mix(in srgb, var(--bg) 60%, var(--card) 40%); }
+tr:nth-child(even) td { background: color-mix(in srgb, var(--bg) 80%, var(--card) 20%); }
+
+/* Dark-Mode leichte Anpassungen */
+@media (prefers-color-scheme: dark){
+  a { text-decoration-color: color-mix(in srgb, var(--brand) 40%, transparent); }
+  .nav .links a:hover { background: #161922; }
+}
+
+/* ===== Print (Skriptum/Handouts) ===================================== */
+@page {
+  size: A4;
+  margin: 15mm;
+}
+@media print {
+  :root{
+    --bg:#ffffff; --card:#ffffff; --text:#000000; --muted:#333; --border:#000;
+  }
+
+  /* Grundlegendes */
+  html, body { background:#fff !important; }
+  body { font-size: 12pt; line-height: 1.4; color:#000; }
+  h1, h2, h3 { page-break-after: avoid; }
+
+  /* Layout vereinfachen */
+  .nav, footer, .links, .btn, .tiles, .noprint { display: none !important; }
+  main { max-width: none; margin: 0; padding: 0; }
+  .card { border: 0; box-shadow: none; padding: 0; }
+
+  /* Tabellen & Code */
+  table { width:100%; border-collapse: collapse; }
+  th, td { border: 1px solid #000; padding: 6pt 8pt; }
+  pre { white-space: pre-wrap; word-wrap: break-word; border: 1px solid #000; }
+  code { background: transparent; border: 0; }
+
+  /* Bilder nicht umbrechen */
+  img { max-width:100%; page-break-inside: avoid; }
+
+  /* Links als Klartext-URL ausgeben */
+  a[href^="http"]:after {
+    content:" (" attr(href) ")"; font-size: 9pt; color:#555;
+  }
+
+  /* Hilfsklassen */
+  .pagebreak { break-after: page; }          /* <div class="pagebreak"></div> */
+  .print-only { display: block !important; } /* Elemente nur im Druck zeigen */
+}
+/* Im Screen verstecken wir .print-only standardmäßig */
+.print-only { display:none; }
