@@ -6,11 +6,18 @@ classes: wide
 excerpt: "Raspberry Pi Pico Labor • Maschinenbau-Skriptum • Diplomarbeiten"
 header:
   overlay_image: /assets/cover-lab.jpg
-  overlay_filter: "0.35"   # etwas mehr Kontrast für die Schrift
+  overlay_filter: "0.35"
   actions:
     - label: "Zum Labor"
       url: "{{ '/lab/' | absolute_url }}"
-      btn_class: "btn--primary"
+      btn_class: "btn--primary btn--large"
+    - label: "Zum Skriptum"
+      url: "{{ '/maschinenbau/' | absolute_url }}"
+      btn_class: "btn btn--large"
+    - label: "Diplomarbeiten"
+      url: "{{ '/diplomarbeit/' | absolute_url }}"
+      btn_class: "btn btn--large"
+
 feature_row:
   - image_path: /assets/cover-lab.jpg
     alt: "Vorschau Labor Raspberry Pi Pico"
