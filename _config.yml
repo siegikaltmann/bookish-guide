@@ -9,7 +9,6 @@ search: true
 search_full_content: true   # optional: durchsucht den ganzen Inhalt, nicht nur Auszüge
 
 remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-
 plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
