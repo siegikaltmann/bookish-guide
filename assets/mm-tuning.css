@@ -308,16 +308,18 @@ tr:nth-child(even) td { background: color-mix(in srgb, var(--bg) 80%, var(--card
 }
 
 /* ===== Pastell-Hero-Varianten ====================================== */
-/* Gemeinsame Lesbarkeit: dunkler Text, kein Text-Schatten */
+/* Gemeinsame Lesbarkeit (alle Varianten) */
 .layout--splash.hero-blue  .page__hero--overlay,
-.layout--splash.hero-sunset.page__hero--overlay,
-.layout--splash.hero-citrus.page__hero--overlay { color:#0b1220; }
+.layout--splash.hero-sunset .page__hero--overlay,
+.layout--splash.hero-citrus .page__hero--overlay { color:#0b1220; }
+
 .layout--splash.hero-blue  .page__title,
 .layout--splash.hero-blue  .page__lead,
 .layout--splash.hero-sunset .page__title,
 .layout--splash.hero-sunset .page__lead,
 .layout--splash.hero-citrus .page__title,
 .layout--splash.hero-citrus .page__lead { text-shadow:none; }
+
 
 /* 1) Pastell-Blau */
 .layout--splash.hero-blue .page__hero--overlay{
