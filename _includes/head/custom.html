@@ -1,17 +1,11 @@
 <!-- MM-Kleintuning: Farben, Buttons, Feature-Karten -->
 <style>
   /* === Branding ====================================================== */
-  :root{
-    --mm-brand: #0a66ff;          /* Primärfarbe */
-    --mm-brand-ink: #ffffff;      /* Text auf Primär */
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --mm-brand:#4f8cff; }
-  }
+  :root{ --mm-brand:#0a66ff; --mm-brand-ink:#ffffff; }
+  @media (prefers-color-scheme: dark){ :root{ --mm-brand:#4f8cff; } }
 
   /* Links */
-  .page__content a,
-  .page__content a:visited { color: var(--mm-brand); }
+  .page__content a, .page__content a:visited { color: var(--mm-brand); }
   .page__content a:hover { text-decoration: underline; }
 
   /* Primärbutton */
@@ -20,49 +14,33 @@
     border-color: var(--mm-brand) !important;
     color: var(--mm-brand-ink) !important;
   }
-  .btn--primary:hover,
-  .btn--primary:focus{ filter: brightness(1.06); }
+  .btn--primary:hover, .btn--primary:focus{ filter: brightness(1.06); }
 
-  /* Hero-Text etwas knackiger */
-  .page__hero--overlay .page__lead{ margin-top:.25rem; }
-  .page__hero--overlay .btn{ box-shadow: 0 6px 20px rgba(0,0,0,.15); }
+  /* Hero */
+  .page__hero--overlay .page__lead{ margin-top:.25rem; max-width:52ch; }
+  .page__hero--overlay .btn{ box-shadow:0 6px 20px rgba(0,0,0,.15); }
+  .page__hero--overlay .page__title{
+    font-size: clamp(28px, 5vw, 44px); line-height:1.15; margin-bottom:.2rem;
+  }
+  .page__hero--overlay .btn + .btn{ margin-left:.5rem; }
 
-  /* Feature Row: Karten-Hover & Layout */
+  /* Feature Row */
   .feature__item{
-    border: 1px solid var(--border, #d3d7e3);
-    border-radius: 14px;
-    padding: 10px;
+    border:1px solid var(--border, #d3d7e3);
+    border-radius:14px; padding:10px;
     transition: transform .12s ease, box-shadow .2s ease;
     background: var(--card, #fff);
   }
-  .feature__item:hover{
-    transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(0,0,0,.08);
-  }
+  .feature__item:hover{ transform:translateY(-2px); box-shadow:0 12px 28px rgba(0,0,0,.08); }
   .feature__item .archive__item-title{ margin-bottom:6px; }
-  .feature__item .btn{ text-decoration: none; }
+  .feature__item .btn{ text-decoration:none; }
 
-  /* Tastatur-Fokus sichtbar */
-  .feature__item a:focus-visible,
-  .btn:focus-visible{
-    outline: 3px solid var(--mm-brand);
-    outline-offset: 3px;
-    border-radius: 10px;
+  /* Fokus sichtbar */
+  .feature__item a:focus-visible, .btn:focus-visible{
+    outline:3px solid var(--mm-brand); outline-offset:3px; border-radius:10px;
   }
 
-  /* Masthead-Nav: aktive/hover Farbe */
-  .masthead__menu-item a:focus,
-  .masthead__menu-item a:hover { color: var(--mm-brand) !important; }
-  .masthead__menu-item--active a { color: var(--mm-brand) !important; }
-</style>
-
-<style>
-  /* Hero-Heading enger & responsiv, Buttons mit Abstand */
-  .page__hero--overlay .page__title{
-    font-size: clamp(28px, 5vw, 44px);
-    line-height: 1.15;
-    margin-bottom: .2rem;
-  }
-  .page__hero--overlay .page__lead{ max-width: 52ch; }
-  .page__hero--overlay .btn + .btn{ margin-left: .5rem; }
+  /* Masthead-Nav */
+  .masthead__menu-item a:focus, .masthead__menu-item a:hover{ color:var(--mm-brand) !important; }
+  .masthead__menu-item--active a{ color:var(--mm-brand) !important; }
 </style>
