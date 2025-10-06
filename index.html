@@ -9,13 +9,13 @@ header:
   overlay_filter: "0.35"
   actions:
     - label: "Zum Labor"
-      url: "{{ '/lab/' | absolute_url }}"
+      url: /lab/
       btn_class: "btn--primary btn--large"
     - label: "Zum Skriptum"
-      url: "{{ '/maschinenbau/' | absolute_url }}"
+      url: /maschinenbau/
       btn_class: "btn btn--large"
     - label: "Diplomarbeiten"
-      url: "{{ '/diplomarbeit/' | absolute_url }}"
+      url: /diplomarbeit/
       btn_class: "btn btn--large"
 
 feature_row:
@@ -23,19 +23,19 @@ feature_row:
     alt: "Vorschau Labor Raspberry Pi Pico"
     title: "Raspberry Pi Pico – Labor"
     excerpt: "Wöchentliche Fortschritte, Code & Demos"
-    url: "{{ '/lab/' | absolute_url }}"
+    url: /lab/
     btn_label: "Öffnen"
   - image_path: /assets/cover-mb.jpg
     alt: "Vorschau Maschinenbau Skriptum"
     title: "Maschinenbau – Skriptum"
     excerpt: "Kapitel & Übungsbeispiele"
-    url: "{{ '/maschinenbau/' | absolute_url }}"
+    url: /maschinenbau/
     btn_label: "Öffnen"
   - image_path: /assets/cover-diplomarbeit.jpg
     alt: "Vorschau Diplomarbeiten"
     title: "Diplomarbeiten"
     excerpt: "Monatsupdates & finale Arbeiten"
-    url: "{{ '/diplomarbeit/' | absolute_url }}"
+    url: /diplomarbeit/
     btn_label: "Öffnen"
 ---
 {% include feature_row %}
