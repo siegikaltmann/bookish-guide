@@ -452,3 +452,77 @@ tr:nth-child(even) td { background: color-mix(in srgb, var(--bg) 80%, var(--card
     linear-gradient(rgba(0,181,240,.40), rgba(0,181,240,.40)),
     linear-gradient(135deg, #d9f3ff 0%, #e8faff 55%, #f5fdff 100%) !important;
 }
+/* ===== Neue Pastell-Varianten (+ Brand-Farbe) ======================= */
+.layout--splash.hero-lilac  { --mm-brand:#8b5cf6; }  /* Violett */
+.layout--splash.hero-ocean  { --mm-brand:#06b6d4; }  /* Cyan/Teal */
+.layout--splash.hero-mint   { --mm-brand:#14b8a6; }  /* Mint/Türkis */
+.layout--splash.hero-amber  { --mm-brand:#f59e0b; }  /* Amber/Gold */
+.layout--splash.hero-slate  { --mm-brand:#64748b; }  /* Slate/Blaugrau */
+
+/* Lesbarkeit: dunkler Text auf Pastell */
+.layout--splash.hero-lilac  .page__title, .layout--splash.hero-lilac  .page__lead,
+.layout--splash.hero-ocean  .page__title, .layout--splash.hero-ocean  .page__lead,
+.layout--splash.hero-mint   .page__title, .layout--splash.hero-mint   .page__lead,
+.layout--splash.hero-amber  .page__title, .layout--splash.hero-amber  .page__lead,
+.layout--splash.hero-slate  .page__title, .layout--splash.hero-slate  .page__lead { color:#0b1220; text-shadow:none; }
+
+/* --- LILAC ---------------------------------------------------------- */
+.layout--splash.hero-lilac .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(139,92,246,.22), rgba(139,92,246,.22)),
+    linear-gradient(135deg, #f3ecff 0%, #f7f1ff 55%, #fcfbff 100%) !important;
+}
+.layout--splash.hero-lilac.hero-strong .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(139,92,246,.40), rgba(139,92,246,.40)),
+    linear-gradient(135deg, #f3ecff 0%, #f7f1ff 55%, #fcfbff 100%) !important;
+}
+
+/* --- OCEAN ---------------------------------------------------------- */
+.layout--splash.hero-ocean .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(6,182,212,.22), rgba(6,182,212,.22)),
+    linear-gradient(135deg, #e6fbff 0%, #eefcff 55%, #f8feff 100%) !important;
+}
+.layout--splash.hero-ocean.hero-strong .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(6,182,212,.40), rgba(6,182,212,.40)),
+    linear-gradient(135deg, #e6fbff 0%, #eefcff 55%, #f8feff 100%) !important;
+}
+
+/* --- MINT ----------------------------------------------------------- */
+.layout--splash.hero-mint .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(20,184,166,.22), rgba(20,184,166,.22)),
+    linear-gradient(135deg, #e7fcf6 0%, #effdf9 55%, #f8fffd 100%) !important;
+}
+.layout--splash.hero-mint.hero-strong .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(20,184,166,.40), rgba(20,184,166,.40)),
+    linear-gradient(135deg, #e7fcf6 0%, #effdf9 55%, #f8fffd 100%) !important;
+}
+
+/* --- AMBER ---------------------------------------------------------- */
+.layout--splash.hero-amber .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(245,158,11,.22), rgba(245,158,11,.22)),
+    linear-gradient(135deg, #fff2df 0%, #fff6e9 55%, #fffaf2 100%) !important;
+}
+.layout--splash.hero-amber.hero-strong .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(245,158,11,.40), rgba(245,158,11,.40)),
+    linear-gradient(135deg, #fff2df 0%, #fff6e9 55%, #fffaf2 100%) !important;
+}
+
+/* --- SLATE ---------------------------------------------------------- */
+.layout--splash.hero-slate .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(100,116,139,.22), rgba(100,116,139,.22)),
+    linear-gradient(135deg, #eef2f6 0%, #f3f6f9 55%, #fafbfd 100%) !important;
+}
+.layout--splash.hero-slate.hero-strong .page__hero--overlay{
+  background-image:
+    linear-gradient(rgba(100,116,139,.38), rgba(100,116,139,.38)),
+    linear-gradient(135deg, #eef2f6 0%, #f3f6f9 55%, #fafbfd 100%) !important;
+}
+
