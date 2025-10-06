@@ -46,3 +46,27 @@
     #mmTop { scroll-behavior: auto; }
   }
 </style>
+
+<script>
+  // UI-Strings für Minimal Mistakes auf Deutsch setzen
+  (function () {
+    // Suchfeld-Platzhalter + Label-Text
+    const input = document.getElementById('search');
+    if (input) input.placeholder = 'Suchbegriff eingeben…';
+    const label = document.querySelector('label[for="search"]');
+    if (label) label.textContent = 'Suchbegriff eingeben…';
+
+    // Toggle-Button (Screenreader-Text)
+    const sr = document.querySelector('.search__toggle .visually-hidden');
+    if (sr) sr.textContent = 'Suche ein-/ausblenden';
+
+    // „Skip links“ (optional)
+    const sk1 = document.querySelector('a[href="#site-nav"].screen-reader-shortcut');
+    if (sk1) sk1.textContent = 'Zur Hauptnavigation springen';
+    const sk2 = document.querySelector('a[href="#main"].screen-reader-shortcut');
+    if (sk2) sk2.textContent = 'Zum Inhalt springen';
+    const sk3 = document.querySelector('a[href="#footer"].screen-reader-shortcut');
+    if (sk3) sk3.textContent = 'Zum Footer springen';
+  })();
+</script>
+
