@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Kapitel 4 – Statik: Kräfte & Momente
+title: "Kapitel 4 – Statik: Kräfte & Momente"
 weight: 4 # Nummerierung
 ---
 
@@ -10,9 +10,9 @@ weight: 4 # Nummerierung
 - Resultierende & Moment berechnen.
 
 ## Begriffe
-- **Kraft** $\\vec F$ in N, **Moment** $M = F \\cdot r_\\perp$ in N·m  
+- **Kraft** $\vec F$ in N, **Moment** $M = F \cdot r_\perp$ in N·m  
 - **Gleichgewicht in der Ebene:**  
-  $\\sum F_x = 0,\\ \\sum F_y = 0,\\ \\sum M_Z = 0$
+  $\sum F_x = 0,\\ \sum F_y = 0,\\ \sum M_Z = 0$
 
 ## Vorgehen (FBD)
 1. Körper **frei schneiden** (Lager, Kontakte ersetzen durch Reaktionskräfte).  
@@ -21,7 +21,7 @@ weight: 4 # Nummerierung
 4. Gleichungen aufstellen, **unbekannte Reaktionen** lösen.
 
 ## Beispiel
-Ein Balken (Länge $L=2\\,\\mathrm{m}$) ist links **fest gelagert** (A) und rechts **loslager** (B). In der Mitte wirkt $F=200\\,\\mathrm{N}$ nach unten.  
+Ein Balken (Länge $L=2 ,\m$) ist links **fest gelagert** (A) und rechts **loslager** (B). In der Mitte wirkt $F=200\\,\\mathrm{N}$ nach unten.  
 Gesucht: Auflagerreaktionen $A_x, A_y, M_A$ und $B_y$.
 
 **Lösungsskizze:** (FBD)  
