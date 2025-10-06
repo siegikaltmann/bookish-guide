@@ -21,7 +21,7 @@ weight: 4 # Nummerierung
 4. Gleichungen aufstellen, **unbekannte Reaktionen** lösen.
 
 ## Beispiel
-Ein Balken (Länge $L=2 m$) ist links **fest gelagert** (A) und rechts **loslager** (B). In der Mitte wirkt $F=200\\,\\mathrm{N}$ nach unten.  
+Ein Balken (Länge $L=2\\,\\mathrm{m}$) ist links **fest gelagert** (A) und rechts **loslager** (B). In der Mitte wirkt $F=200\\,\\mathrm{N}$ nach unten.  
 Gesucht: Auflagerreaktionen $A_x, A_y, M_A$ und $B_y$.
 
 **Lösungsskizze:** (FBD)  
