@@ -10,6 +10,9 @@ url: "https://siegikaltmann.github.io"      # <- deinen GitHub-Namen einsetzen
 baseurl: "/bookish-guide"                 # <- exakt dein Repo-Name, mit führendem Slash
 timezone: Europe/Vienna
 markdown: kramdown
+locale: de_DE
+lang: de
+
 
 search: true
 search_full_content: true   # optional: durchsucht den ganzen Inhalt, nicht nur Auszüge
