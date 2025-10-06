@@ -12,6 +12,8 @@ timezone: Europe/Vienna
 markdown: kramdown
 locale: de_DE
 lang: de
+date_format: "%d.%m.%Y"
+
 
 
 search: true
