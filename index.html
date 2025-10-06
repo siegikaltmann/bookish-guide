@@ -1,12 +1,12 @@
 ---
 layout: splash
 title: TGM – Labor · GMB · Diplomarbeit
-classes: wide hero-sunset   # <— HIER die Variante wählen: hero-blue | hero-sunset | hero-citrus
+classes: wide hero-blue          # oder: hero-sunset | hero-citrus | hero-pink | hero-green | hero-htlblue | hero-tgmblue
+# für mehr Kontrast zusätzlich: hero-strong
 excerpt: "Raspberry Pi Pico Labor • Maschinenbau-Skriptum • Diplomarbeiten"
-
 header:
-  overlay_color: "#ffffff"   # Hero an, aber ohne Bild
-  overlay_filter: "0"        # kein Abdunkeln
+  overlay_color: "#ffffff"
+  overlay_filter: "0"
   actions:
     - label: "Zum Labor"
       url: /lab/
@@ -17,6 +17,9 @@ header:
     - label: "Diplomarbeiten"
       url: /diplomarbeit/
       btn_class: "btn btn--large"
+---
+{% include feature_row %}
+
 
 feature_row:
   - image_path: /assets/cover-lab.jpg
