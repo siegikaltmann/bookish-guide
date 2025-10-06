@@ -1,0 +1,12 @@
+# Hauptnavigation für Minimal Mistakes
+main:
+  - title: "Start"
+    url: "/"
+  - title: "Labor"
+    url: "/lab/"
+  - title: "Maschinenbau"
+    url: "/maschinenbau/"
+  - title: "Diplomarbeiten"
+    url: "/diplomarbeit/"
+  - title: "GitHub"
+    url: "https://github.com/siegikaltmann/bookish-guide"
