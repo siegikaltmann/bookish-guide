@@ -1,4 +1,5 @@
 ---
+layout: doc
 title: Kapitel 2 – Werkstoffe & Eigenschaften
 weight: 2
 ---
