@@ -1,5 +1,11 @@
-title: Meine Website
-description: Dokumentation für Labor, Maschinenbau & Diplomarbeiten
+title: "TGM – Labor · GMB · Diplomarbeit"
+description: "Wöchentliche Labor-Dokus mit Raspberry Pi Pico, Maschinenbau-Skriptum & Diplomarbeiten am TGM."
+logo: /favicon.svg
+
+# Feed-Link im MM-Footer ausblenden
+atom_feed:
+  hide: true
+
 url: "https://siegikaltmann.github.io"      # <- deinen GitHub-Namen einsetzen
 baseurl: "/bookish-guide"                 # <- exakt dein Repo-Name, mit führendem Slash
 timezone: Europe/Vienna
